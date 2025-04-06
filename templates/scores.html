@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Введите ваши баллы</title>
+    <style>
+        body {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.95);
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: #fff;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 16px;
+            color: #34495e;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #00b8ff;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #00b8ff;
+        }
+        p {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h1>Введите ваши баллы ЕГЭ</h1>
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+            <form method="post">
+                {% for subject in subjects %}
+                    <label>{{ subject }}:</label>
+                    <input type="number" name="{{ subject }}" min="0" max="100">
+                {% endfor %}
+                <input type="submit" value="Узнать подходящие ВУЗы">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

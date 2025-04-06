@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Результаты</title>
+    <style>
+        body {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.95);
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: #fff;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #00b8ff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .university {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .university h2 {
+            color: #00b8ff;
+            margin-bottom: 10px;
+        }
+        .university p {
+            font-size: 16px;
+            color: #00b8ff;
+        }
+        .university a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #00b8ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .university a:hover {
+            background-color: #00b8ff;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ecf0f1;
+            margin: 30px 0;
+        }
+        p {
+            font-size: 18px;
+            text-align: center;
+        }
+        a.back {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #00b8ff;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        a.back:hover {
+            background-color: #00b8ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h1>Подходящие для вас ВУЗы</h1>
+            {% if universities %}
+                {% for uni in universities %}
+                    <div class="university">
+                        <h2>{{ uni.name }}</h2>
+                        <p>{{ uni.description }}</p>
+                        <a href="{{ uni.website }}" target="_blank">Перейти на сайт</a>
+                    </div>
+                    {% if not loop.last %}
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p>К сожалению, подходящих ВУЗов не найдено.</p>
+            {% endif %}
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="/" class="back">Вернуться на главную страницу</a>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+        <p>&copy; 2024 Все права защищены.</p>
+    </footer>
+    <footer>
+        <p>beta version</p>
+    </footer>
+</html>

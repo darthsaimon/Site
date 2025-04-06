@@ -1,0 +1,82 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Белый фон */
+    color: #333;
+}
+
+/* Шапка */
+header {
+    background-color: #2e8b57; /* Зеленый цвет */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+main {
+    padding: 50px;
+    text-align: center;
+}
+
+.hero {
+    background-color: #2e8b57; /* Зеленая заливка */
+    color: white;
+    padding: 50px 20px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.info {
+    margin-top: 50px;
+}
+
+.info h2 {
+    font-size: 2rem;
+    color: #2e8b57; /* Зеленый заголовок */
+}
+
+/* Футер */
+footer {
+    background-color: #2e8b57; /* Зеленый цвет */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
